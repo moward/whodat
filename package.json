@@ -26,5 +26,7 @@
     "test": "grunt",
     "start": "node app"
   },
-  "repository": {}
+  "repository": {},
+  "author": "Matt Howard",
+  "license": "MIT"
 }

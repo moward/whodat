@@ -1,0 +1,31 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "console": false,
+    "exports": false,
+    "module": false,
+    "require": false,
+    "process": false
+  },
+  "rules": {
+    "no-bitwise": 2,
+    "curly": 2,
+    "camelcase": 0,
+    "eqeqeq": 2,
+    "no-use-before-define": 2,
+    "eol-last": 2,
+    "no-undef": 2,
+    "no-unused-vars": 2,
+    "semi": 2,
+    "quotes": [2, "single", "avoid-escape"],
+    "no-trailing-spaces": 2,
+    "brace-style": [2, "1tbs"],
+    "strict": 0,
+    "space-after-keywords": 2,
+    "space-infix-ops": 2,
+    "no-loop-func": 1,
+  }
+}

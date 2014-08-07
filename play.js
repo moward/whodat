@@ -1,30 +1,25 @@
 var _ = require('underscore');
 var moment = require('moment');
-var twitterAPI = require('node-twitter-api');
+var TwitterAPI = require('node-twitter-api');
 var config = require('./config');
 
-var twitter = new twitterAPI(config.twitter)
+var twitter = new TwitterAPI(config.twitter);
 
 var get_tweet = function (req, res, callback){
-  if(req.session.tweets && req.session.tweets.length > 0){
-    //pick a random tweet
-    var tweet = req.session.tweets.pop();
+  //pick a random tweet
+  var tweet = req.session.tweets.pop();
 
-    // TODO: could be make more efficient
+  // TODO: could make randomization and selection more efficient
 
-    var tweeter = _.findWhere(req.session.accts,{handle: tweet.handle});
+  var tweeter = _.findWhere(req.session.accts,{handle: tweet.handle});
 
-    var choices = _.first(_.shuffle(_.without(req.session.accts,tweeter)), 4);
+  var choices = _.first(_.shuffle(_.without(req.session.accts,tweeter)), 4);
 
-    choices.push(tweeter);
+  choices.push(tweeter);
 
-    choices = _.shuffle(choices);
+  choices = _.shuffle(choices);
 
-    callback(tweet, choices);
-
-  } else {
-    get_new_tweets(req, res, callback);
-  }
+  callback(tweet, choices);
 };
 
 var get_new_tweets = function (req, res, callback){
@@ -33,7 +28,7 @@ var get_new_tweets = function (req, res, callback){
       {count: 100},
       req.session.access_token,
       req.session.access_token_secret,
-      function(error, data, response) {
+      function(error, data) {
         if (error) {
           console.log(error);
           res.send('Timeline reading error');
@@ -55,12 +50,12 @@ var get_new_tweets = function (req, res, callback){
             };
           }));
 
-          get_tweet(req, res, callback);
+          callback();
         }
       }
     );
   } else {
-    res.redirect('/')
+    res.redirect('/');
   }
 };
 
@@ -84,13 +79,18 @@ exports.get = function (req, res){
     };
 
     //use has already gotten tweet and refreshed page
-    if(req.session.tweet){
-      loadPage(req.session.tweet, req.session.choices)
+    if (req.session.tweet){
+      loadPage(req.session.tweet, req.session.choices);
     } else {
-      get_tweet(req, res, loadPage);
-    }  
-  }
-  else {
+      if (req.session.tweets && req.session.tweets.length > 0){
+        get_tweet(req, res, loadPage);
+      } else {
+        get_new_tweets(req, res, function(){
+          get_tweet(req, res, loadPage);
+        });
+      }
+    }
+  } else {
     res.redirect('/');
   }
 };
@@ -105,7 +105,7 @@ exports.ajax = function (req, res){
       delete req.session.choices;
     };
 
-    if(answeredHandle === req.session.tweet.handle){
+    if (answeredHandle === req.session.tweet.handle){
       req.session.correct ++;
       reset();
       res.json({response: 'correct', new_score: req.session.correct});
@@ -115,8 +115,7 @@ exports.ajax = function (req, res){
       reset();
       res.json({response: 'incorrect', correct_handle: correct_handle, new_score: req.session.incorrect});
     }
-  }
-  else {
+  } else {
     res.json({response: 'error'});
   }
 };

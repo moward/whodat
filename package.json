@@ -15,8 +15,16 @@
     "cookie-parser": "*",
     "redis": "*"
   },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-eslint": "0.0.4"
+  },
   "engines": {
     "node": "0.10.26"
+  },
+  "scripts": {
+    "test": "grunt",
+    "start": "node app"
   },
   "repository": {}
 }

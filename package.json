@@ -1,0 +1,22 @@
+{
+  "name": "Whodat",
+  "version": "0.0.1",
+  "description": "A game built on Node.js that uses the Twitter API.",
+  "dependencies": {
+    "connect-redis": "2.*",
+    "express": "4.*",
+    "express-session": "~1.7.4",
+    "errorhandler": "*",
+    "body-parser": "*",
+    "jade": "1.1.4",
+    "moment": "*",
+    "node-twitter-api": "*",
+    "underscore": "*",
+    "cookie-parser": "*",
+    "redis": "*"
+  },
+  "engines": {
+    "node": "0.10.26"
+  },
+  "repository": {}
+}

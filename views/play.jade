@@ -1,0 +1,22 @@
+extends body
+
+block head
+  script(type='text/javascript', src='/scripts/play.js')
+
+block content
+  header
+    span#score
+      span.correct=correct
+      span.incorrect=incorrect
+    h1 Whodat?
+  section.tweet
+    div.date=formatDate(tweet.date)
+    div.text!=tweet.text
+  section.choices
+    ul
+      each choice in choices
+        li.active(data-handle=choice.handle)
+          span.handle='@' + choice.handle
+          div=choice.name
+  footer#copy
+    | &copy; 2014 Matt Howard

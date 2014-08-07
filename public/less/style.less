@@ -1,0 +1,120 @@
+@import "normalize.less";
+
+@light-gray: #eee;
+
+@mid-gray: #aaa;
+
+@twitter-blue: #4099FF;
+
+@logo: #E8830C;
+
+@yellow: #FFEE0D;
+
+@correct: #57FF00;
+
+@incorrect: #FF0000;
+
+@white: #fff;
+
+body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background-color: @light-gray;
+  font-size: 11pt;
+  margin: 8px;
+}
+
+div.content {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+header {
+  span#score {
+    float: right;
+
+    .correct {
+      color: darken(@correct, 20%);
+
+      &:before {
+        content: "\2713";
+        display: inline-block;
+        font-weight: bold;
+      }
+    }
+    .incorrect {
+      color: @incorrect;
+
+      &:before {
+        content: "\2717";
+        display: inline-block;
+        font-weight: bold;
+        margin-left: 8px;
+      }
+    }
+  }
+  h1 {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 250%;
+    margin: 0.3em 0 0.1em 0;
+    line-height: 1.3em;
+    color: @logo;
+  }
+}
+
+section.tweet, section.choices li {
+  border-radius: 8px;
+  padding: .7em;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+section.choices ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    cursor: pointer;
+    background-color: @white;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &.correct {
+      background: lighten(@correct,30%);
+    }
+    &.incorrect {
+      background: lighten(@incorrect,40%);
+    }
+    &.active:hover {
+      background-color: lighten(@yellow,30%);
+    }
+    span.handle {
+      float: right;
+      font-size: 80%;
+      color: @mid-gray;
+    }
+  }
+}
+
+section.tweet {
+  background-color: @twitter-blue;
+
+  div.date{
+    text-align: right;
+    font-size: 80%;
+    color: @light-gray;
+    line-height: 1em;
+    margin-bottom: 0.5em;
+  }
+  div.text {
+    color: @white;
+  }
+}
+
+footer#copy {
+  text-align: center;
+  margin: 1em 0;
+  color: @mid-gray;
+}

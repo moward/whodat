@@ -1,1 +1,278 @@
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:0 0}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}body{font-family:"Lucida Sans Unicode","Lucida Grande",sans-serif;background-color:#eee;font-size:11pt;margin:8px}div.content{margin:0 auto;max-width:500px}header span#score{float:right}header span#score .correct{color:#349900}header span#score .correct:before{content:"\2713";display:inline-block;font-weight:700}header span#score .incorrect{color:red}header span#score .incorrect:before{content:"\2717";display:inline-block;font-weight:700;margin-left:8px}header h1{font-family:'Shadows Into Light',cursive;font-size:250%;margin:.3em 0 .1em;line-height:1.3em;color:#e8830c}section.tweet,section.choices li{border-radius:8px;padding:.7em;display:block;margin-bottom:.5em}section.choices ul{list-style:none;padding:0;margin:0}section.choices ul li{cursor:pointer;background-color:#fff;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}section.choices ul li.correct{background:#bcff99}section.choices ul li.incorrect{background:#fcc}section.choices ul li.active:hover{background-color:#fff9a6}section.choices ul li span.handle{float:right;font-size:80%;color:#aaa}section.tweet{background-color:#4099ff}section.tweet div.date{text-align:right;font-size:80%;color:#eee;line-height:1em;margin-bottom:.5em}section.tweet div.text{color:#fff}footer#copy{text-align:center;margin:1em 0;color:#aaa}
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background-color: #eeeeee;
+  font-size: 11pt;
+  margin: 8px;
+}
+div.content {
+  margin: 0 auto;
+  max-width: 500px;
+}
+header span#score {
+  float: right;
+}
+header span#score .correct {
+  color: #349900;
+}
+header span#score .correct:before {
+  content: "\2713";
+  display: inline-block;
+  font-weight: bold;
+}
+header span#score .incorrect {
+  color: #ff0000;
+}
+header span#score .incorrect:before {
+  content: "\2717";
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 8px;
+}
+header h1 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 250%;
+  margin: 0.3em 0 0.1em 0;
+  line-height: 1.3em;
+  color: #e8830c;
+}
+section.tweet,
+section.choices li {
+  border-radius: 8px;
+  padding: .7em;
+  display: block;
+  margin-bottom: 0.5em;
+}
+section.choices ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+section.choices ul li {
+  cursor: pointer;
+  background-color: #ffffff;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+section.choices ul li.correct {
+  background: #bcff99;
+}
+section.choices ul li.incorrect {
+  background: #ffcccc;
+}
+section.choices ul li.active:hover {
+  background-color: #fff9a6;
+}
+section.choices ul li span.handle {
+  float: right;
+  font-size: 80%;
+  color: #aaaaaa;
+}
+section.tweet {
+  background-color: #4099ff;
+}
+section.tweet div.date {
+  text-align: right;
+  font-size: 80%;
+  color: #eeeeee;
+  line-height: 1em;
+  margin-bottom: 0.5em;
+}
+section.tweet div.text {
+  color: #ffffff;
+}
+footer#copy {
+  text-align: center;
+  margin: 1em 0;
+  color: #aaaaaa;
+  font-size: 90%;
+}
+footer#copy a,
+footer#copy a:hover,
+footer#copy a:visited {
+  color: #003673;
+  text-decoration: none;
+}
